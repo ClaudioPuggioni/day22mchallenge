@@ -1,13 +1,163 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Water+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#typetext {
+  display: flex;
+  padding-bottom: 15px;
+
+  font-size: 55px;
+  font-family: "IM Fell Great Primer";
+}
+
+#typer {
+  position: relative;
+  bottom: 5px;
+
+  font-size: 60px;
+
+  animation: typing 0.8s ease-in 1s infinite;
+}
+
+#myName {
+  padding-bottom: 25px;
+
+  font-size: 30px;
+  font-family: "Water Brush";
+}
+
+#button {
+  position: fixed;
+  top: 3%;
+  right: 3%;
+  height: 50px;
+  width: 150px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+
+  border: 1px solid black;
+  border-radius: 50px;
+
+  font-size: 16px;
+  font-family: "open sans";
+}
+
+#button:hover #hand {
+  animation: waveHand 0.7s linear 0s infinite normal forwards;
+}
+
+#hand {
+  padding-right: 5px;
+
+  font-size: 17px;
+}
+
+#socials {
+  position: relative;
+  width: 50%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialIcon {
+  height: 40px;
+  width: 40px;
+
+  filter: invert(35%);
+}
+
+#twitter {
+  position: absolute;
+  left: 0;
+  animation: bounceSize 0.5s ease-in 3s 1 normal forwards;
+}
+#twitter:hover {
+  filter: invert(0%);
+  transition: filter ease-out 0.7s;
+}
+
+#in {
+  left: 50%;
+  position: absolute;
+  animation: bounceSize 0.5s ease-in 4s 1 normal forwards;
+}
+#in:hover {
+  filter: invert(0%);
+  transition: filter ease-out 0.7s;
+}
+
+#github {
+  left: 100%;
+  position: absolute;
+  animation: bounceSize 0.5s ease-in 5s 1 normal forwards;
+}
+#github:hover {
+  filter: invert(0%);
+  transition: filter ease-out 0.7s;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes bounceSize {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(150%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+@keyframes waveHand {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  25% {
+    transform: rotate(9deg);
+    transform-origin: bottom;
+  }
+  50% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  75% {
+    transform: rotate(-4deg);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
 }
